@@ -1,0 +1,17 @@
+.gitignore: En este archivo se colo las archivos que no debemos subir al repositorio
+en el mismo tenemos *.local que nos permite ocualtar la configuracion de firebase
+ en su lugar en el archivo .env.example donde creamos variables de entorno.
+Le cambiamos el nombre a .env.local para que que gitignore lo imita en el respositorio
+Siempre estos archivos tienen que tener el mismo nivel (en el mismo lugar)
+
+/config/firebase.js: tenemos las variables importadas, en el caso de vite estas 
+variables se exportan mediante import.meta.env. + el nombre del a variable 
+
+const firebaseConfig = {
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
+};
